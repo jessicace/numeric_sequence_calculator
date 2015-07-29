@@ -74,7 +74,7 @@ function isFibonacciNumber(number) {
   var fibonacciNumber = 0;
   var result = false;
 
-  for (var i = 0; i <= number; i++) {
+  for (var i = 0; fibonacciNumber <= number; i++) {
     fibonacciNumber = value1 + value2;
     if (number == fibonacciNumber) {
       return true;
