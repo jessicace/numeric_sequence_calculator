@@ -1,7 +1,3 @@
-window.onload = function () {
-  $('#calculate').click(calculateNumericSequences);
-}
-
 function calculateNumericSequences(event) {
   var number = parseInt($('#number').val());
   var numericSequences = [];
@@ -15,11 +11,12 @@ function calculateNumericSequences(event) {
 }
 
 function naturalNumbers(number) {
+  isValid(number)
   var result = [];
   for (var i = 1; i <= number; i++) {
     result.push(i);
-  }
-  return result.join(', ');
+    }
+  return result;
 }
 
 function oddNumbers(number) {
@@ -71,3 +68,11 @@ function fibonacciSequence(number) {
   }
   return result.join(', ');
 }
+
+window.onload = function () {
+  $('#calculate').click(calculateNumericSequences);
+}
+
+function isValid(value) {
+  return Math.floor(value) === value && value < 1;
+};
