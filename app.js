@@ -60,27 +60,14 @@ function fizzBuzz(number) {
 // Returns all fibonacci numbers up to and including the number entered.
 function fibonacciSequence(number) {
   var result = [];
-  for (var i = 1; i <= number; i++) {
-    if (isFibonacciNumber(i)) {
-      result.push(i);
-    }
-  }
-  return result.join(', ');
-}
-
-function isFibonacciNumber(number) {
   var value1 = 0;
   var value2 = 1;
-  var fibonacciNumber = 0;
-  var result = false;
+  var fibonacciNumber = 1;
 
-  for (var i = 0; fibonacciNumber <= number; i++) {
-    fibonacciNumber = value1 + value2;
-    if (number == fibonacciNumber) {
-      return true;
-    }
+  for (fibonacciNumber; fibonacciNumber <= number; fibonacciNumber += value1) {
+    result.push(fibonacciNumber);
     value1 = value2;
     value2 = fibonacciNumber;
   }
-  return result;
+  return result.join(', ');
 }
