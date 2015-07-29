@@ -1,13 +1,14 @@
-function naturalNumbers(event) {
-  var result = [];
-  var number = event.toElement.innerHTML;
-  for (var i = 0; var <= number; i++) {
-    result.push(i);
-  }
-  return result.join(',');
-}
-
 window.onload = function () {
-  var string = $("#calculate").click(naturalNumbers);
-  $('#result').text(string);
+  $("#calculate").click(naturalNumbers);
+
+  function naturalNumbers(event) {
+    var result = [];
+    var number = $('#number').val();
+    console.log(number);
+    for (var i = 1; i <= number; i++) {
+      result.push(i);
+    }
+    console.log(result);
+    $('#result').text(result.join(', '));
+  }
 }
