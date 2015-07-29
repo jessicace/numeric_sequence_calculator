@@ -65,7 +65,7 @@ function fibonacciSequence(number) {
       result.push(i);
     }
   }
-  return result;
+  return result.join(', ');
 }
 
 function isFibonacciNumber(number) {
