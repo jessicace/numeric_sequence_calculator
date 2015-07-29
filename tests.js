@@ -28,3 +28,13 @@ QUnit.test("Fibonacci Sequence should return all fibonacci numbers, up to and in
   assert.deepEqual(output.length, expectedOutput.length, "fibonacciSequence(150) should have 13 values.");
   assert.deepEqual(output, expectedOutput, "fibonacciSequence(150) should return [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 ]." )
 });
+
+QUnit.test("isValid should return true if it is a positive, whole number.", function (assert) { 
+  assert.deepEqual(isValid(1), true, "isValid(1) returns true, as 1 is a valid number.");
+  assert.raises(function () { isValid(-1); },
+                Error("The input must be a positive number."),
+                "isValid(-1) throws an error.");
+  assert.raises(function () { isValid(1.1); },
+                Error("The input must be an integer."),
+                "isValid(1.1) throws an error.");
+});

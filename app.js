@@ -80,4 +80,5 @@ window.onload = function () {
 function isValid(input) {
   if (input < 1) throw new Error("The input must be a positive number.");
   if (Math.floor(input) !== input) throw new Error("The input must be an integer.");
+  return true;
 };
