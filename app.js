@@ -10,8 +10,8 @@ function calculateNumericSequences(event) {
   // $('#result').text(numericSequences.join("\n"));
 }
 
-function naturalNumbers(number) {
-  isValid(number)
+function naturalNumberSequence(number) {
+  isValid(number);
   var result = [];
   for (var i = 1; i <= number; i++) {
     result.push(i);
@@ -19,12 +19,12 @@ function naturalNumbers(number) {
   return result;
 }
 
-function oddNumbers(number) {
+function oddNumberSequence(number) {
   var result = [];
   for (var i = 1; i <= number; i += 2) {
     result.push(i);
   }
-  return result.join(', ');
+  return result;
 }
 
 function evenNumbers(number) {
@@ -73,6 +73,7 @@ window.onload = function () {
   $('#calculate').click(calculateNumericSequences);
 }
 
-function isValid(value) {
-  return Math.floor(value) === value && value < 1;
+function isValid(input) {
+  if (input < 1) throw new Error("The input must be a positive number.");
+  if (Math.floor(input) !== input) throw new Error("The input must be an integer.");
 };
