@@ -30,7 +30,7 @@ function oddNumberSequence(number) {
 
 function evenNumberSequence(number) {
   var result = [];
-  for (var i = 2; i <= number; i += 2) {
+  for (var i = 0; i <= number; i += 2) {
     result.push(i);
   }
   return result;
@@ -60,14 +60,14 @@ function fibonacciSequence(number) {
   var result = [];
   var value1 = 0;
   var value2 = 1;
-  var fibonacciNumber = 1;
+  var fibonacciNumber = 0;
 
   for (fibonacciNumber; fibonacciNumber <= number; fibonacciNumber += value1) {
     result.push(fibonacciNumber);
     value1 = value2;
     value2 = fibonacciNumber;
   }
-  return result.join(', ');
+  return result;
 }
 
 window.onload = function () {
