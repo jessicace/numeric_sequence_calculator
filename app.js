@@ -36,7 +36,7 @@ function evenNumberSequence(number) {
   return result;
 }
 
-function fizzBuzz(number) {
+function threeFiveSequence(number) {
   var result = [];
   for (var i = 1; i <= number; i++) {
     if ((i % 3 == 0) && (i % 5 == 0)) {
@@ -52,7 +52,7 @@ function fizzBuzz(number) {
       result.push(i);
     }
   }
-  return result.join(', ');
+  return result;
 }
 
 // Returns all fibonacci numbers up to and including the number entered.

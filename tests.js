@@ -18,3 +18,11 @@ QUnit.test("Even Number Sequence", function (assert) {
   assert.deepEqual(evenNumberSequence(1), [], "evenNumberSequence(1) returns [ ]");
   assert.deepEqual(evenNumberSequence(2), [ 2 ], "evenNumberSequence(2) returns [ 2 ]");
 });
+
+QUnit.test("Three & Five Number Sequence", function (assert) {
+  var values = threeFiveSequence(15);
+  assert.deepEqual(values[0], 1, "The first value should be '1'.");
+  assert.deepEqual(values[2], 'C', "The third value should be 'C'.");
+  assert.deepEqual(values[4], 'E', "The fifth value should be 'E'.");
+  assert.deepEqual(values[14], 'Z', "The 15th value should be 'Z'.");
+});
