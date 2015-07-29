@@ -1,9 +1,10 @@
 function calculateNumericSequences(event) {
   var number = parseInt($('#number').val());
+  isValid(number);
   var numericSequences = [];
-  numericSequences.push(naturalNumbers(number));
-  numericSequences.push(oddNumbers(number));
-  numericSequences.push(evenNumbers(number));
+  numericSequences.push(naturalNumberSequence(number));
+  numericSequences.push(oddNumberSequence(number));
+  numericSequences.push(evenNumberSequence(number));
   numericSequences.push(fizzBuzz(number));
   numericSequences.push(fibonacciSequence(number));
   console.log(numericSequences.join("\n"));
@@ -11,7 +12,6 @@ function calculateNumericSequences(event) {
 }
 
 function naturalNumberSequence(number) {
-  isValid(number);
   var result = [];
   for (var i = 1; i <= number; i++) {
     result.push(i);
@@ -20,6 +20,7 @@ function naturalNumberSequence(number) {
 }
 
 function oddNumberSequence(number) {
+  isValid(number);
   var result = [];
   for (var i = 1; i <= number; i += 2) {
     result.push(i);
@@ -27,12 +28,12 @@ function oddNumberSequence(number) {
   return result;
 }
 
-function evenNumbers(number) {
+function evenNumberSequence(number) {
   var result = [];
   for (var i = 2; i <= number; i += 2) {
     result.push(i);
   }
-  return result.join(', ');
+  return result;
 }
 
 function fizzBuzz(number) {
