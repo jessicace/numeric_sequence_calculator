@@ -16,38 +16,37 @@
 		<section id="instructions">
 			<h2>Instructions</h2>
 			<ul>
+				<li>Enter a number into the text field below.</li>
 				<li>The calculator accepts positive, whole numbers only.</li>
 			</ul>
 		</section>
 		<section id="description">
 			<h2>Number Sequences</h2>
-			<dl>
-				<dt>Natural Numbers</dt>
-				<dd>All numbers up to and including the number entered.</dd>
-				<dt>The Odd Numbers</dt>
-				<dd>All odd numbers up to and including the number entered.</dd>
-				<dt>The Even Numbers</dt>
-				<dd>All even numbers up to and including the number entered.</dd>
-				<dt>FizzBuzz</dt>
-				<dd>All numbers up to and including the number entered, except when:
+			<ol>
+				<li>Natural Numbers: All numbers up to and including the number entered.</li>
+				<li>Odd Numbers: All odd numbers up to and including the number entered.</li>
+				<li>Even Numbers: All even numbers up to and including the number entered.</li>
+				<li>All numbers up to and including the number entered, except when:
 					<ul>
 						<li>Output C when a number is a multiple of 3.</li>
 						<li>Output E when a number is a multiple of 5.</li>
 						<li>Output Z when a number is a multiple of both 3 and 5.</li>
 					</ul>
-				</dd>
-				<dd>Fibonacci Sequence</dd>
-				<dt>All fibonacci numbers up to and including the number entered.</dt>
-			</dl>
+				</li>
+				<li>Fibonacci Sequence: All fibonacci numbers up to and including the number entered.</li>
+			</ol>
 		</section>
 		<section>
-			<div id="calculator-input">
-				<input id="number"></input>
-				<button id="calculate">Calculate</button>
-			</div>
+			<form>
+				<label for="number">Enter number:</label>
+				<input name="number" id="number"></input>
+				<span id="error"></span>
+				<button id="calculate">Calculate</button>	
+			</form>
+			<output>
+				<ol id="result"></ol>
+			</output>
 		</section>
-		<output id="result">
-		</output>
 	</body>
 </html>
 		

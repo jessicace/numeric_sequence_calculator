@@ -1,19 +1,45 @@
-function calculateNumericSequences(event) {
-  var number = parseInt($('#number').val());
-  isValid(number);
+window.onload = function () {
+  $('form').submit(function (event) {
+    event.preventDefault();
+    displayNumericSequences();
+  });
+}
+
+function displayNumericSequences() {
+  // Remove error messages and previous results
+  $('#error').text('');
+  $('#result').empty();
+
+  // Validate numbers
+  var number = parseFloat($('#number').val());
+
+  // If an error is encountered, the error span will be updated.
+  try {
+    isValid(number);
+  } catch (error) {
+    $('#error').text(error.message);
+  }
+  
+  var sequences = numericSequences(number);
+  // List items are appended to the result list.
+  for (var index in sequences) {
+    $('<li class="numeric-sequence" id=' + index + '>' + sequences[index].join(', ') + '</li>').appendTo('#result');
+  }
+}
+
+function numericSequences(number) {
   var numericSequences = [];
   numericSequences.push(naturalNumberSequence(number));
   numericSequences.push(oddNumberSequence(number));
   numericSequences.push(evenNumberSequence(number));
-  numericSequences.push(fizzBuzz(number));
+  numericSequences.push(threeFiveSequence(number));
   numericSequences.push(fibonacciSequence(number));
-  console.log(numericSequences.join("\n"));
-  // $('#result').text(numericSequences.join("\n"));
+  return numericSequences;
 }
 
 function naturalNumberSequence(number) {
   var result = [];
-  for (var i = 1; i <= number; i++) {
+  for (var i = 0; i <= number; i++) {
     result.push(i);
     }
   return result;
@@ -28,6 +54,7 @@ function oddNumberSequence(number) {
   return result;
 }
 
+// Returns all even numbers up to the number entered.
 function evenNumberSequence(number) {
   var result = [];
   for (var i = 0; i <= number; i += 2) {
@@ -36,8 +63,12 @@ function evenNumberSequence(number) {
   return result;
 }
 
+// It should return all numbers up to and including the number entered, except:
+// it should output 'C' when a number is a multiple of 3; 
+// it should output 'E' when it is a multiple of 5; 
+// and it should output 'Z' when it is a multiple of both 3 and 5.
 function threeFiveSequence(number) {
-  var result = [];
+  var result = [ 0 ];
   for (var i = 1; i <= number; i++) {
     if ((i % 3 == 0) && (i % 5 == 0)) {
       result.push('Z');
@@ -68,10 +99,6 @@ function fibonacciSequence(number) {
     value2 = fibonacciNumber;
   }
   return result;
-}
-
-window.onload = function () {
-  $('#calculate').click(calculateNumericSequences);
 }
 
 // An input is valid if the following is satisfied:
